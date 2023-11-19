@@ -1,0 +1,80 @@
+<h2>1. Caracterización de dominio</h2>
+
+    <h3>1.1. Contexto y descripción</h3>
+
+    <p>
+        Para la realización de esta visualización, se eligió el conjunto de datos <a href="https://www.kaggle.com/datasets/hernan4444/animeplanet-recommendation-database-2020" target="_blank"><span class="bold">Anime-Planet Recommendation Database 2020</span></a>, datos que giran en torno al anime incluyen varios archivos CSV, cada uno de los cuales ofrece una perspectiva única del mundo de los espectadores y las preferencias de anime. Estos datos podrían ser esenciales para una aplicación web que pretende visualizar e informar sobre las tendencias y preferencias relacionadas con el anime.
+    </p>
+
+    <h3>1.2. Naturaleza de los datos</h2>
+
+    <p>
+        El conjuntos de datos cubre varios aspectos de la audiencia y las recomendaciones de anime:
+        <ul>
+            <li>
+                <span class="code">animelist.csv</span>: Contiene datos específicos del usuario en relación con el anime, incluidos el ID del usuario, el ID del anime, la puntuación otorgada por el usuario, el estado del progreso del anime del usuario y el número de episodios vistos. Este conjunto de datos es extenso, con 20 millones de filas, abarcando 16.745 animes diferentes y 74.129 usuarios.
+            </li>
+            <li>
+                <span class="code">rating_complete.csv</span>: Un subconjunto de <span class="code">animelist.csv</span>, centrado en los animes totalmente vistos con puntuaciones asignadas. Contiene 8 millones de puntuaciones de 15.681 animes por 68.199 usuarios.
+            </li>
+            <li>
+                <span class="code">anime_recomendations.csv</span>: Este conjunto de datos incluye recomendaciones de anime basadas en animes específicos. Enumera el ID del anime, el ID del anime recomendado y el número de votos favorables para cada recomendación.
+            </li>
+            <li>
+                <span class="code">anime.csv</span>: Ofrece información completa sobre cada anime, como ID, nombre, nombres alternativos, puntuación, número de votos, etiquetas, advertencias de contenido, tipo, número de episodios, duración, año de inicio y fin, temporada, estudios, sinopsis y URL.
+            </li>
+            <li>
+                <span class="code">watching_status.csv</span>: Describe los posibles estados de la columna "watching_status" en <span class="code">animelist.csv</span>, como Watched, Watching, Dropped, etc.
+            </li>
+        </ul>
+    </p>
+
+    <h3>1.3. Fuente de datos y preprocesamiento</h3>
+
+    <p>
+        Los conjuntos de datos proceden principalmente de Anime-Planet, una conocida base de datos y comunidad de anime. Los datos parecen haber sido preprocesados hasta cierto punto, como demuestran el formato estructurado y los criterios de selección específicos de conjuntos de datos.
+    </p>
+
+    <h3>1.4. Usuarios potenciales</h3>
+    
+    <p>
+        Los principales usuarios de esta visualización podrían ser principalmente fanáticos al anime, científicos de datos (para hacer análisis) y gente relacionada a la venta de productos relacionados al anime. Los fanáticos pueden descubrir animes populares o muy valorados, los cientíticos de datos pueden analizar las tendencias y preferencias de los espectadores de algún anime, y por ejemplo, vendedores de manga, pueden identificar géneros o animes populares para así potenciar sus ventas.
+    </p>
+
+    <h3>1.5. Uso de la visualización</h3>
+
+    <p>
+        La visualización podría servir para varios fines:
+
+        <ul>
+            <li>
+                <span class="bold">Conocimiento del espectador</span>: Los usuarios pueden explorar las tendencias en las preferencias de anime, las clasificaciones y los patrones de audiencia.
+            </li>
+            <li>
+                <span class="bold">Análisis de recomendaciones</span>: Analizar cómo se recomiendan determinados animes en función de la audiencia y las puntuaciones.
+            </li>
+            <li>
+                <span class="bold">Descubrimiento de contenidos</span>: Ayudar a los usuarios a descubrir nuevos animes basados en popularidad, ratings o recomendaciones.
+            </li>
+            <li>
+                <span class="bold">Investigación académica</span>: Proporcionar datos para la investigación académica sobre los patrones de consumo de medios en el ámbito del anime.
+            </li>
+        </ul>
+
+        Dados los fines anterior y la naturaleza del conjunto de datos, se proponen los siguientes temas para la visualización:
+
+        <ul>
+            <li>
+                <span class="bold">Análisis de tendencias</span>: Visualización de las tendencias de popularidad y valoración de diferentes animes a lo largo del tiempo.
+            </li>
+            <li>
+                <span class="bold">Red de recomendaciones</span>: Creación de un gráfico de red que muestre cómo los diferentes animes están conectados a través de las recomendaciones. ESTE ME TINCA MAS uwu
+            </li>
+            <li>
+                <span class="bold">Análisis de géneros</span>: Examinar la popularidad y las puntuaciones de los animes a través de diferentes géneros y etiquetas.
+            </li>
+            <li>
+                <span class="bold">Participación de los espectadores</span>: Entender cuántos episodios ven los usuarios de media y la distribución de su estado de visionado.
+            </li>
+        </ul>
+    </p>

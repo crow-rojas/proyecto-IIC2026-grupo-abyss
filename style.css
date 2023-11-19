@@ -3,25 +3,35 @@ body {
 }
 
 #content {
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding: 20px;
+    text-align: justify;
+
 }
 
-h1 {
-    color: #333;
-    font-size: 24px;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 p {
     font-size: 16px;
-    color: #111;
-    text-align: justify;
 }
 
-ul li {
-    /* background-color: #f0f0f0; */
-    margin: 2px 0;
-    padding: 5px;
+li {
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.code {
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #eee;
+    padding: 2.5px;
     border-radius: 5px;
 }
