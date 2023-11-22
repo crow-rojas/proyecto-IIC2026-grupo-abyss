@@ -1,3 +1,135 @@
 <h2>2. Abstracción de datos y tareas</h2>
 
-Ánimo uwu
+<h2>Abstracción de Datos</h2>
+
+<p>
+    La abstracción de datos es un proceso fundamental en la visualización de información, el cual provee la interpretación de los datos crudos para determinar su significado y estructura 
+    dentro de un contexto específico. Este proceso nos permite definir la semántica de los datos, es decir, su significado y relevancia en el mundo real. 
+    Identificamos qué representan los datos (por ejemplo, nombres, ubicaciones, relaciones), cómo están estructurados (como ítems individuales, atributos de esos ítems, o enlaces entre ítems) 
+    y cómo se pueden categorizar (categóricos, cuantitativos, ordinales). Además, establecemos la disponibilidad de los datos, determinando si son estáticos o dinámicos, 
+    lo cual influirá en las decisiones de diseño para la visualización.
+
+    Para este caso particular, se detallará la información presente en numeros registros de animés, junto con su relación con el nivel de recomendación asociado.
+</p>
+
+<h3>Tabla de Anime</h3>
+<ul>
+    <li><strong>Semántica y Tipos de Datos:</strong>
+        <ul>
+            <li>Tipos de atributos
+                <ul>
+                    <li><strong>Anime-PlanetID:</strong> Identificador único (ítem).</li>
+                    <li><strong>Name:</strong> Nombre del anime (atributo categórico).</li>
+                    <li><strong>Alternative Name:</strong> Nombres alternativos (atributo categórico).</li>
+                    <li><strong>Rating Score:</strong> Calificación promedio (atributo cuantitativo).</li>
+                    <li><strong>Number Votes:</strong> Cantidad de votos (atributo cuantitativo).</li>
+                    <li><strong>Tags:</strong> Etiquetas descriptivas (atributo categórico).</li>
+                    <li><strong>Content Warning:</strong> Advertencias de contenido (atributo categórico).</li>
+                    <li><strong>Type:</strong> Tipo de anime (TV, película, etc.) (atributo categórico).</li>
+                    <li><strong>Episodes:</strong> Número de episodios (atributo cuantitativo).</li>
+                    <li><strong>Finished:</strong> Estado de finalización (atributo booleano).</li>
+                    <li><strong>Duration:</strong> Duración promedio de episodios (atributo cuantitativo o categórico).</li>
+                    <li><strong>StartYear:</strong> Año de inicio (atributo cuantitativo).</li>
+                    <li><strong>EndYear:</strong> Año de finalización (atributo cuantitativo).</li>
+                    <li><strong>Season:</strong> Temporada de lanzamiento (atributo categórico).</li>
+                    <li><strong>Studios:</strong> Estudios de producción (atributo categórico).</li>
+                    <li><strong>Synopsis:</strong> Resumen de la trama (atributo textual descriptivo).</li>
+                    <li><strong>Url:</strong> Enlace a la página del anime (atributo categórico).</li>
+                </ul>
+            </li>
+            <li>Datos Singulares
+                <ul>
+                    <li><strong>Ítem:</strong> Cada fila representa un anime único con un conjunto de atributos que lo describen.</li>
+                    <li><strong>Atributos:</strong> Propiedades específicas como 'Name', 'Rating Score', 'Tags', entre otros. Estos fueron detallados en el apartado anterior.</li>
+                    <li><strong>Enlaces:</strong> Si bien la tabla por si sola no contiene enlaces, más adelante veremos una tabla que se le relaciona directamente mediante el ID del anime.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><strong>Tipos de datasets:</strong>
+        <p>
+            Nuestro conjunto de datos de anime se presenta en un formato tabular, que es el tipo de dataset más común y familiar para muchos, 
+            similar a las hojas de cálculo o bases de datos tradicionales. Se organiza en filas y columnas, donde cada fila representa un ítem individual 
+            (en este caso, un anime específico), y cada columna representa un atributo que describe alguna característica de ese ítem (como el título, calificación, género, entre otros). 
+            Este enfoque estructurado permite una consulta y análisis eficientes, ya que cada celda de la tabla contiene un valor específico que corresponde a la combinación única de un 
+            ítem y su atributo.
+        </p>
+    </li>
+    <li><strong>Disponibilidad del dataset:</strong>
+        <p>
+            El conjunto de datos de anime que estamos utilizando es de naturaleza estática, lo que significa que toda la información se proporciona de una sola vez 
+            y no se actualiza en tiempo real. A diferencia de los datasets dinámicos, que requieren el manejo de flujos de datos continuos y pueden cambiar con nuevas 
+            actualizaciones, adiciones o eliminaciones, nuestro dataset estático permite un análisis y una visualización más sencillos. Esto es ideal para realizar un 
+            examen profundo de las tendencias y patrones dentro de la cultura del anime sin la necesidad de gestionar la complejidad adicional que conlleva el procesamiento de datos en tiempo real.
+        </p>
+    </li>
+</ul>
+
+<h3>Tabla de Recomendaciones de Anime</h3>
+<ul>
+    <li><strong>Semántica y Tipos de Datos:</strong>
+        <ul>
+            <li>Tipos de atributos
+                <ul>
+                    <li><strong>Anime:</strong> Identificador único del anime recomendado (ítem).</li>
+                    <li><strong>Recommendation:</strong> Identificador único del anime que se recomienda (ítem).</li>
+                    <li><strong>Agree Votes:</strong> Número de votos de acuerdo con la recomendación (atributo cuantitativo).</li>
+                </ul>
+            </li>
+            <li>Datos Singulares
+                <ul>
+                    <li><strong>Ítem:</strong> Cada fila representa una recomendación única con un conjunto de atributos que describen la relación entre dos animes.</li>
+                    <li><strong>Atributos:</strong> Propiedades específicas como 'Agree Votes' que cuantifica el acuerdo de la recomendación.</li>
+                    <li><strong>Enlaces:</strong> La conexión entre el 'Anime' y la 'Recommendation', que muestra qué anime se recomienda en relación con otro.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><strong>Tipos de datasets:</strong>
+        <p>
+            La tabla de recomendaciones de anime también se presenta en un formato tabular, con filas que representan recomendaciones individuales y columnas que representan los atributos de esas recomendaciones. 
+            Este formato permite analizar las relaciones entre diferentes animes y cómo la comunidad los valora en términos de recomendaciones.
+        </p>
+    </li>
+    <li><strong>Disponibilidad del datasets:</strong>
+        <p>
+            Al igual que la tabla de anime, el conjunto de datos de recomendaciones de anime es estático. Contiene datos recopilados hasta el momento de su última actualización y no refleja cambios en tiempo real. 
+            Este enfoque facilita el análisis de las conexiones entre animes sin la necesidad de lidiar con la complejidad de los datos dinámicos.
+        </p>
+    </li>
+</ul>
+
+<h2>Abstracción de Tareas</h2>
+    <p>
+        La abstracción de tareas en el análisis de visualización de datos se refiere a la identificación y definición de las acciones clave que los usuarios realizarán con los datos. 
+        En el dominio de las visualizaciones de anime y sus recomendaciones asociadas, las tareas se centran en extraer significado e insights de las series, las tendencias de audiencia 
+        y las interconexiones de contenido. Esta abstracción permite no solo satisfacer la curiosidad de los aficionados sino también apoyar a los profesionales en la comprensión de 
+        patrones complejos de visualización y recomendación.
+    </p>
+    <ul>
+        <li>
+            <strong>Descubrir Tendencias en Popularidad de Animes:</strong> 
+            <p>
+                Los usuarios podrán analizar las calificaciones y votos a lo largo del tiempo para descubrir tendencias en la popularidad de diferentes series de anime. 
+                Esta tarea es crucial para comprender el impacto cultural y comercial de las series y se alinea con el interés de fanáticos y profesionales del sector en 
+                la evolución de las preferencias de la comunidad de anime.
+            </p>
+        </li>
+        <li>
+            <strong>Comparar Recomendaciones entre Animes:</strong> 
+            <p>
+                Facilita a los usuarios la comparación de la cantidad de votos de acuerdo para las recomendaciones, identificando qué animes son comúnmente recomendados juntos. 
+                Esta tarea permite explorar la red de recomendaciones y proporciona insights sobre la percepción de similitud entre series, ayudando a descubrir nuevas animes 
+                basadas en preferencias de visualización compartidas.
+            </p>
+        </li>
+        <li>
+            <strong>Identificar Animes Atípicos:</strong> 
+            <p>
+                Permite a los usuarios localizar animes que se desvían significativamente de las métricas comunes, como aquellos con una alta cantidad de votos pero calificaciones 
+                bajas. Concentrarse en los outliers puede revelar series que generan opiniones divididas o controversias, siendo de interés para críticos y analistas culturales que 
+                buscan entender el discurso alrededor de ciertos títulos.
+            </p>
+        </li>
+    </ul>
+
