@@ -1,0 +1,39 @@
+
+<h2>3. Codificación Visual y de Interacción</h1>
+
+<h3>3.1. Elecciones de Marcas, Canales e Idioms Visuales</h2>
+<p> A continuación se muestran las elecciones de marcas, canales e idioms visuales para cada tarea visual:</p>
+
+<p><strong>Tarea Visual 1: Análisis de Tendencias</strong></p>
+<ul>
+    <li><strong>Marca</strong>: Líneas para representar tendencias de calificaciones a lo largo del tiempo.</li>
+    <li><strong>Canal</strong>: Color para diferenciar entre animes; Eje X para el tiempo; Eje Y para calificaciones.</li>
+    <li><strong>Idiom Visual</strong>: Gráfico de Multilínea, ya que permitirá una visualización clara de las tendencias de calificación a lo largo del tiempo.</li>
+</ul>
+
+<p><strong>Tarea Visual 2: Red de Recomendaciones</strong></p>
+<ul>
+    <li><strong>Marca</strong>: Nodos para animes y enlaces para recomendaciones.</li>
+    <li><strong>Canal</strong>: Tamaño de nodos por popularidad; Color de enlaces por cantidad de votos favorables.</li>
+    <li><strong>Idiom Visual</strong>: Diagrama Nodo Enlace, ya que es ideal para mostrar las interconexiones entre animes basadas en recomendaciones.</li>
+</ul>
+
+<p><strong>Tarea Visual 3: Análisis de animes atípicos</strong></p>
+<ul>
+    <li><strong>Marca</strong>: Áreas para representar diferentes géneros de animes atípicos.</li>
+    <li><strong>Canal</strong>: Color para diferenciar géneros; Eje X para géneros; Eje Y para número de animes o calificaciones.</li>
+    <li><strong>Idiom Visual</strong>: Treemap, ya que es eficaz para representar la distribución de géneros y subgéneros dentro del conjunto de datos.</li>
+</ul>
+
+<h3>3.2. Idioms de Interacción y Decisiones de Diseño</h2>
+
+<p> A continuación se muestran las decisiones de diseño para cada tarea visual:</p>
+<ul>
+    <li><strong>Navegación y Selección</strong>: Implementación de <span class="code">d3.zoom</span> para permitir a los usuarios explorar la Red de Recomendaciones con más detalle y uso de <span class="code">d3.brush</span> en el Gráfico de Multilínea para seleccionar rangos de tiempo específicos.
+    </li>
+    <li><strong>Filtrado de Información</strong>: Inclusión de filtros de género y año en el Treemap mediante elementos de input HTML (<span class="code">&lt;input/&gt;</span>). Esto permitirá a los usuarios enfocarse en animes específicos basados en su interés.
+    </li>
+    <li><strong>Interacción con el Mouse</strong>: Al pasar el mouse sobre un anime en cualquiera de las visualizaciones, se mostrará un tooltip con información detallada (nombre, calificación, género).</li>
+    <li><strong>Vistas Coordinadas</strong>: Conexión entre el Gráfico de Multilínea y el Treemap: seleccionar un género en el Treemap actualizará el Gráfico de Multilínea para mostrar solo animes de ese género.</li>
+    <li><strong>Uso de Data Joins</strong>: Se debe utilizar una aplicación correcta de Data Joins en <span class="code">D3.js</span> para actualizar el Gráfico de Multilínea y la Red de Recomendaciones sin necesidad de recrear el SVG completo.</li>
+</ul>

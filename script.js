@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('levels/level_1.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('level_1').innerHTML = data;
-        });
-
-    fetch('levels/level_2.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('level_2').innerHTML = data;
-        });
+    for (let i = 1; i <= 3; i++) {
+        fetch(`levels/level_${i}.html`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(`level_${i}`).innerHTML = data;
+            });
+    }
 });

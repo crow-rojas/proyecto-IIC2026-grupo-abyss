@@ -3,7 +3,7 @@ body {
 }
 
 #content {
-    width: 50%;
+    width: 80%;
     margin: auto;
     padding: 20px;
     text-align: justify;
@@ -17,11 +17,12 @@ a {
 
 p {
     font-size: 16px;
-}
+} 
 
 li {
     margin-bottom: 10px;
     margin-left: -20px;
+    margin-top: 10px;
 }
 
 .bold {
