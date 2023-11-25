@@ -20,7 +20,7 @@ const tooltipVis3 = d3.select("#vis-3")
     .style("padding", "5px")
     .style("position", "absolute");
 
-function updateVisualization(voteThreshold, ratingThreshold) {
+function updateVisualizationXD(voteThreshold, ratingThreshold) {
     d3.csv("anime.csv").then(function(data) {
         let filteredData = data.filter(d => {
             return +d["Number Votes"] >= voteThreshold && +d["Rating Score"] <= ratingThreshold;
@@ -58,7 +58,7 @@ function updateVisualization(voteThreshold, ratingThreshold) {
     });
 }
 
-updateVisualization(5000, 2.5);
+updateVisualizationXD(5000, 2.5);
 
 d3.select("#updateButton").on("click", function() {
     const newVoteThreshold = +d3.select("#voteInput").property("value");

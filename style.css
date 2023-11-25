@@ -7,7 +7,16 @@ body {
     margin: auto;
     padding: 20px;
     text-align: justify;
+}
 
+#tooltip {
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 3px;
+    pointer-events: none;
 }
 
 a {
@@ -71,4 +80,9 @@ svg {
 
 .tooltip {
     z-index: 100;
+}
+
+.container p {
+    width: 70%;
+    text-align: justify;
 }

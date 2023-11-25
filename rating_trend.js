@@ -126,6 +126,7 @@ d3.csv("anime.csv").then(function(data) {
             .style("fill", "#2727bf")
             .on("click", function(event, d) {
                 const animeName = d.Name
+                create_recommendation_network(animeName);
             })
             .on("mouseover", function(event, d) {
             tooltip.transition()
@@ -201,6 +202,7 @@ d3.csv("anime.csv").then(function(data) {
             .style("fill", "#2727bf")
             .on("click", function(event, d) {
                 const animeName = d.Name
+                create_recommendation_network(animeName);
             })
             .on("mouseover", function(event, d) {
             tooltip.transition()

@@ -17,14 +17,22 @@
     <div class="container">
 
         <h2>Red de Recomendaciones</h2>
+        <p>En esta visualización podrás ver la red de recomendaciones de los animes. Cada nodo representa un anime, donde su tamaño muestra el rating promedio (mientras más grande, mejor rating), y cada arista representa una recomendación, donde el color de la arista muestra que tan acuerdo estuvieron algunos de usuarios con esa recomendación. Puedes buscar un anime en específico y ver sus recomendaciones utilizando el botón de abajo.</p>
+        <p><strong>Interacción con Análisis de Tendencias:</strong> Si haces click en un punto del anime de tendencias, te mostrará las recomendaciones a ese anime, si es que existen.</p>
         <div id="vis-1">
+            <div id="tooltip" ></div>
         </div>
         
+        <div class="user_input">
+            <label for="anime-input">Busca el anime que quieras (será al azar si no hay nada):</label>
+            <input type="text" id="anime-input" name="anime-input"> 
+            <button id="refresh-button">Buscar</button>
+        </div>
     </div>
 
     <div class="container">
 
-        <h2>Análisis de Tendencia</h2>
+        <h2>Análisis de Tendencias</h2>
         <div>
             <label for="dataCount">Selecciona número de datos a mostrar (se muestran al azar):</label>
             <select id="dataCount">
@@ -52,8 +60,7 @@
             <br>
         </div>
 
-        <div>
-            <h3>Características del Gráfico</h3>
+        <div id="content">
             <p>Este gráfico interactivo ofrece una variedad de características para una experiencia mejorada en la exploración de datos:</p>
             <ul>
                 <li><strong>Desplazamiento Horizontal:</strong> Navegue a lo largo del eje x para ver conjuntos de datos extensos en detalle.</li>
@@ -80,8 +87,7 @@
         <div id="vis-3">
         </div>
 
-        <div>
-            <h3>Cracterísticas del Gráfico</h3>
+        <div id="content">
             <p>Este TreeMap interactivo está diseñado para proporcionar una visión detallada de los animes atípicos, aquellos que a pesar de tener un alto número de votos cuentan con una baja valoración. A través de esta visualización, se pueden explorar de forma intuitiva las siguientes interacciones:</p>
             <ul>
                 <li><strong>Cambiar números de filtro:</strong> Se pueden cambiar los números de votos y rating para apreciar diferentes animes típicos o atípicos.</li>
@@ -91,11 +97,10 @@
         
     </div>
 
-    <div class="container">
-        <h3>Hecho por: Cristóbal Rojas y Emilia Pinto</h3>
+    <h3>Hecho por: Cristóbal Rojas y Emilia Pinto</h3>
     <h4>Visualización de la Información - IIC2026 | 2023-2</h4>
-    </div>
     
+    <script src="recommendation_network.js"></script>
     <script src="rating_trend.js"></script>
     <script src="atypical_animes.js"></script>
 
