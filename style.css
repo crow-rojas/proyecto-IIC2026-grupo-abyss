@@ -25,6 +25,10 @@ li {
     margin-top: 10px;
 }
 
+svg {
+    border: solid 4px #eee;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -36,3 +40,28 @@ li {
     padding: 2.5px;
     border-radius: 5px;
 }
+
+.button {
+    background-color: #eee;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
