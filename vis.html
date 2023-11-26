@@ -20,10 +20,85 @@
         <div id="vis-1">
         </div>
         
-        <h3>Hecho por: Cristóbal Rojas y Emilia Pinto</h3>
-        <h4>Visualización de la Información - IIC2026 | 2023-2</h4>
     </div>
-    <script src="recommendation_network.js"></script>
+
+    <div class="container">
+
+        <h2>Análisis de Tendencia</h2>
+        <div>
+            <label for="dataCount">Selecciona número de datos a mostrar (se muestran al azar):</label>
+            <select id="dataCount">
+            <option value="all">Todos</option>
+            <option value="5000">5000</option>
+            <option value="1000">1000</option>
+            <option value="500">500</option>
+            <option value="100">100</option>
+            <option value="10">10</option>
+            </select>
+            <br>
+        </div>
+
+        <div>
+            <label for="yearInput">Entra un/unos año/s:</label>
+            <input type="text" id="yearInput" placeholder="ej 2000-2015">
+            <button id="filterButton">Filtrar</button>
+            <br>
+        </div>
+        
+  
+          
+        <div id="scrollContainer" style="width: 1400px; overflow-x: scroll;">
+            <div id="vis-2"></div>
+            <br>
+        </div>
+
+        <div>
+            <h3>Características del Gráfico</h3>
+            <p>Este gráfico interactivo ofrece una variedad de características para una experiencia mejorada en la exploración de datos:</p>
+            <ul>
+                <li><strong>Desplazamiento Horizontal:</strong> Navegue a lo largo del eje x para ver conjuntos de datos extensos en detalle.</li>
+                <li><strong>Información Detallada en Tooltips:</strong> Pase el cursor sobre los puntos de datos para mostrar información detallada en un tooltip.</li>
+                <li><strong>Filtrado Flexible de Datos:</strong> Filtre los datos especificando un número de elementos aleatorios para mostrar o seleccionando un rango de fechas.</li>
+                <li><strong>Brush Interactivo:</strong> Utilice el click izquierdo para seleccionar y resaltar rangos de datos, y click derecho para restablecer la selección.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Encontrar animes atípicos </h2>
+        <div>
+            <label for="voteInput">Número mínimo de votos:</label>
+            <input type="number" id="voteInput" placeholder="Entra un número de votos" value="5000">
+        </div>
+        <div>
+            <label for="ratingInput">Número máximo de rating:</label>
+            <input type="number" step="0.1" id="ratingInput" placeholder="Entra un rating máximo" value="2.5">
+        </div>
+        <button id="updateButton">Actualizar</button>
+        
+        <div id="vis-3">
+        </div>
+
+        <div>
+            <h3>Cracterísticas del Gráfico</h3>
+            <p>Este TreeMap interactivo está diseñado para proporcionar una visión detallada de los animes atípicos, aquellos que a pesar de tener un alto número de votos cuentan con una baja valoración. A través de esta visualización, se pueden explorar de forma intuitiva las siguientes interacciones:</p>
+            <ul>
+                <li><strong>Cambiar números de filtro:</strong> Se pueden cambiar los números de votos y rating para apreciar diferentes animes típicos o atípicos.</li>
+            </ul>
+            <p>El objetivo de esta visualización es destacar los animes que, a pesar de su popularidad, podrían considerarse como infravalorados o que han generado división de opiniones entre los espectadores.</p>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <h3>Hecho por: Cristóbal Rojas y Emilia Pinto</h3>
+    <h4>Visualización de la Información - IIC2026 | 2023-2</h4>
+    </div>
+    
+    <script src="rating_trend.js"></script>
+    <script src="atypical_animes.js"></script>
+
 </body>
 
 </html>
