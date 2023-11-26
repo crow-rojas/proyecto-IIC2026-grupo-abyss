@@ -125,7 +125,7 @@ d3.csv("anime.csv").then(function(data) {
             .attr("r", 3)
             .style("fill", "#2727bf")
             .on("click", function(event, d) {
-                console.log("reemplazar con un update a la otra vis")
+                const animeName = d.Name
             })
             .on("mouseover", function(event, d) {
             tooltip.transition()
@@ -147,7 +147,6 @@ d3.csv("anime.csv").then(function(data) {
 
 
     d3.select("#dataCount").on("change", function() {
-        console.log("Dropdown changed");
         const selectedValue = d3.select(this).property("value");
         const numPoints = selectedValue === "all" ? "all" : parseInt(selectedValue, 10);
         drawVisualization(numPoints);
@@ -201,7 +200,7 @@ d3.csv("anime.csv").then(function(data) {
             .attr("r", 3)
             .style("fill", "#2727bf")
             .on("click", function(event, d) {
-                console.log("reemplazar con un update a la otra vis")
+                const animeName = d.Name
             })
             .on("mouseover", function(event, d) {
             tooltip.transition()
