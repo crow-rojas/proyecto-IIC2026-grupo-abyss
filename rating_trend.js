@@ -124,6 +124,9 @@ d3.csv("anime.csv").then(function(data) {
             .attr("cy", d => y(d["Rating Score"]))
             .attr("r", 3)
             .style("fill", "#2727bf")
+            .on("click", function(event, d) {
+                console.log("reemplazar con un update a la otra vis")
+            })
             .on("mouseover", function(event, d) {
             tooltip.transition()
                 .duration(100)
@@ -197,6 +200,9 @@ d3.csv("anime.csv").then(function(data) {
             .attr("cy", d => y(d["Rating Score"]))
             .attr("r", 3)
             .style("fill", "#2727bf")
+            .on("click", function(event, d) {
+                console.log("reemplazar con un update a la otra vis")
+            })
             .on("mouseover", function(event, d) {
             tooltip.transition()
                 .duration(100)
