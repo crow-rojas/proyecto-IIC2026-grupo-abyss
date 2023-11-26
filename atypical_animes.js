@@ -42,13 +42,13 @@ function updateVisualization(voteThreshold, ratingThreshold) {
             .style("stroke", "black")
             .style("fill", d => colorScale(d.data["Rating Score"]))
             .on("mouseover", function(event, d) {
-                tooltipVis3.transition().duration(200).style("opacity", 0.9);
+                tooltipVis3.style("opacity", 1);
                 tooltipVis3.html("Anime: " + d.data["Name"] + "<br/>" + "Votes: " + d.data["Number Votes"] + "<br/>" + "Rating: " + d.data["Rating Score"])
                     .style("left", (event.pageX) + "px")
                     .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function(d) {
-                tooltipVis3.transition().duration(200).style("opacity", 0);
+                tooltipVis3.style("opacity", 0);
             });
 
         blocks.exit().remove();

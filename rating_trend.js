@@ -46,11 +46,50 @@ d3.csv("anime.csv").then(function(data) {
     svg.append("g")
     .call(d3.axisLeft(y));
 
+        // BRUSH
+        const brush = d3.brushX()
+        .extent([[0, 0], [width, height]])
+        .on("end", brushed);
+
+    svg.append("g")
+        .attr("class", "brush")
+        .call(brush)
+
+    function brushed(event) {
+        const selection = event.selection;
+        if (selection) {
+            const [x0, x1] = selection.map(x.invert);
+    
+            svg.selectAll("circle")
+                .style("opacity", 0.1)
+                .filter(d => d && x0 <= d.StartYear && d.StartYear <= x1)
+                .style("opacity", 1);
+    
+            svg.selectAll("line")
+                .style("opacity", 0.1)
+                .filter(d => d && x0 <= d.StartYear && d.StartYear <= x1)
+                .style("opacity", 1);
+        } else {
+            svg.selectAll("circle").style("opacity", 1);
+            svg.selectAll("line").style("opacity", 1);
+        }
+    }
+
+    // Right-click event listener to clear brush
+    svg.on("contextmenu", function(event) {
+    event.preventDefault();
+    d3.select(".brush").call(brush.move, null);
+    svg.selectAll("circle").style("opacity", 1);
+    svg.selectAll("line").style("opacity", 1);
+    });
+
+
     // Create a tooltip
     const tooltip = d3.select("#vis-2")
         .append("div")
         .style("opacity", 0)
         .attr("class", "tooltip")
+        .style("pointer-events", "none")
         .style("background-color", "white")
         .style("border", "solid")
         .style("border-width", "2px")
@@ -77,7 +116,7 @@ d3.csv("anime.csv").then(function(data) {
             .attr("stroke-width", 1);
         });
 
-        svg.selectAll("dot")
+        svg.selectAll("circle")
             .data(displayData)
             .enter()
             .append("circle")
@@ -87,8 +126,8 @@ d3.csv("anime.csv").then(function(data) {
             .style("fill", "#2727bf")
             .on("mouseover", function(event, d) {
             tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
+                .duration(100)
+                .style("opacity", 1);
             tooltip.html("Anime: " + d.Name + "<br/>Year: " + d.StartYear + "<br/>End Year: " + d.EndYear + "<br/>Rating: " + d["Rating Score"])
                 .style("left", (event.pageX + 10) + "px")
                 .style("top", (event.pageY - 10) + "px");
@@ -150,7 +189,7 @@ d3.csv("anime.csv").then(function(data) {
             .attr("stroke-width", 1);
         });
 
-        svg.selectAll("dot")
+        svg.selectAll("circle")
             .data(data)
             .enter()
             .append("circle")
@@ -160,8 +199,8 @@ d3.csv("anime.csv").then(function(data) {
             .style("fill", "#2727bf")
             .on("mouseover", function(event, d) {
             tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
+                .duration(100)
+                .style("opacity", 1);
             tooltip.html("Anime: " + d.Name + "<br/>Year: " + d.StartYear + "<br/>End Year: " + d.EndYear + "<br/>Rating: " + d["Rating Score"])
                 .style("left", (event.pageX + 10) + "px")
                 .style("top", (event.pageY - 10) + "px");
@@ -172,44 +211,6 @@ d3.csv("anime.csv").then(function(data) {
                 .style("opacity", 0);
             });
     }
-
-    // BRUSH
-    const brush = d3.brushX()
-        .extent([[0, 0], [width, height]])
-        .on("end", brushed);
-
-    svg.append("g")
-        .attr("class", "brush")
-        .call(brush);
-
-    function brushed(event) {
-        const selection = event.selection;
-        if (selection) {
-            const [x0, x1] = selection.map(x.invert);
-    
-            svg.selectAll("circle")
-                .style("opacity", 0.1)
-                .filter(d => d && x0 <= d.StartYear && d.StartYear <= x1)
-                .style("opacity", 1);
-    
-            svg.selectAll("line")
-                .style("opacity", 0.1)
-                .filter(d => d && x0 <= d.StartYear && d.StartYear <= x1)
-                .style("opacity", 1);
-        } else {
-            svg.selectAll("circle").style("opacity", 1);
-            svg.selectAll("line").style("opacity", 1);
-        }
-    }
-
-    // Right-click event listener to clear brush
-    svg.on("contextmenu", function(event) {
-    event.preventDefault();
-    d3.select(".brush").call(brush.move, null);
-    svg.selectAll("circle").style("opacity", 1);
-    svg.selectAll("line").style("opacity", 1);
-    });
-
   
 }).catch(function(error){
    console.log(error);
